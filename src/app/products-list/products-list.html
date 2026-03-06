@@ -1,0 +1,11 @@
+<p class="ml-12 mt-6"> Home  > <strong> Product List</strong></p>
+<h1 class="text-3xl font-bold text-center mt-9">Product List </h1>
+<div class=" m-12 mt-5 border-b border-gray-300 pb-15 mb-4 grid grid-cols-4 gap-7">
+    <app-products-detail 
+*ngFor="let item of productsList"
+[products]="item" > <!--We are passing data named product from parent(product list) to child product detail-->
+
+
+</app-products-detail>
+</div>
+
