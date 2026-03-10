@@ -5,6 +5,7 @@ import { Cart } from './component/cart/cart';
 import { ProductDetail } from './component/product-detail/product-detail';
 import { ProductList } from './component/product-list/product-list';
 import { ProductsList } from './products-list/products-list';
+import { ProductInfo } from './product-info/product-info';
 
 export const routes: Routes = [
     {path:"",component:Home},
@@ -12,7 +13,8 @@ export const routes: Routes = [
     {path:"cart",component:Cart},
     {path:"productDetail",component:ProductDetail},
     {path:"productList",component:ProductList},
-    {path:"productsList",component:ProductsList}
+    {path:"productsList",component:ProductsList},
+    {path:"product-info/:title",component:ProductInfo}
 
 
 

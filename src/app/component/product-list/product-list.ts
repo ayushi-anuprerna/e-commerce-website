@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ProductDetail } from '../product-detail/product-detail';
 import { CommonModule } from '@angular/common';
 
-interface ProductDesc{
+interface ProductDesc{ //We ar defining what details we need in the card
   discount:number;
   img:string;
   title:string;
@@ -13,7 +13,7 @@ interface ProductDesc{
 
 @Component({
   selector: 'app-product-list',
-  standalone:true,
+  standalone:true, //independent module 
   imports: [ProductDetail,CommonModule],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
