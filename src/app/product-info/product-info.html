@@ -1,13 +1,13 @@
 <section class="flex gap-12 ">
   <div class="flex-row">
     <div>
-      <img [src]="mainImg" class="h-155 w-155 rounded-2xl ml-9 mt-9" />
+      <img [src]="mainImg" class="h-155 w-150 rounded-2xl ml-9 mt-9" />
     </div>
-    <div class="flex h-35 w-35 ml-9 mt-5 mb-5 gap-5">
-      <img (click)="changeImg(product.img[0])" [src]="product.img[0]" class="rounded-xl  hover:border-blue-400 active:border-blue-400" />
-      <img (click)="changeImg(product.img[1])" [src]="product.img[1]" class="rounded-xl  hover:border-blue-400 active:border-blue-400" />
-      <img (click)="changeImg(product.img[2])" [src]="product.img[2]" class="rounded-xl  hover:border-blue-400 active:border-blue-400" />
-      <img (click)="changeImg(product.img[3])" [src]="product.img[3]" class="rounded-xl  hover:border-blue-400 active:border-blue-400" />
+    <div class="flex ml-9 mt-5 mb-5 gap-5 ">
+      <img (click)="changeImg(product.img[0])" [src]="product.img[0]" class="rounded-xl  hover:border-blue-400 active:border-blue-400 w-35 h-35" />
+      <img (click)="changeImg(product.img[1])" [src]="product.img[1]" class="rounded-xl  hover:border-blue-400 active:border-blue-400 w-35 h-35" />
+      <img (click)="changeImg(product.img[2])" [src]="product.img[2]" class="rounded-xl  hover:border-blue-400 active:border-blue-400 w-35 h-35" />
+      <img (click)="changeImg(product.img[3])" [src]="product.img[3]" class="rounded-xl  hover:border-blue-400 active:border-blue-400 w-35 h-35" />
     </div>
   </div>
   <!--description section starts here-->
@@ -51,7 +51,7 @@
         <button (click)="increment()" class="bg-white border-solid border-2 border-black rounded-xl h-7 w-9 font-bold">+</button>
     </div>
     <hr class="text-gray-300 my-5 ">
-    <button class="w-full bg-blue-400 rounded-xl p-4 text-white text-[18px] ">Add to Cart</button>
+    <button class="w-full bg-blue-400 rounded-xl p-4 text-white text-[18px] hover:bg-blue-700">Add to Cart</button>
     <button class="w-full bg-white rounded-xl p-4 text-black text-[18px] mt-4 border border-gray-400 border-solid">Add to Wishlist</button>
     <hr class="text-gray-300 my-5">
     <div class="flex gap-6 mb-5">

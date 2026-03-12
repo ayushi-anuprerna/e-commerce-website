@@ -1,1 +1,62 @@
-<p>cart works!</p>
+<section class="m-8 ml-7">
+  <p class="mt-4 ">Home > <strong>Shopping Cart</strong></p>
+  <h1 class="mt-6 text-xl font-bold">Shopping Cart</h1>
+  <div class="flex gap-3 mt-9">
+    <div class="rounded-xl border-black border-solid border-2 w-3/5">
+      <p class="my-5 ml-4.5 font-bold">Cart Items({{ cartLength }})</p>
+      <hr class="text-black"/>
+      <div *ngFor="let item of cartItems" class="flex grid-cols-4 justify-center mt-4 items-center border-b-2 border-black pb-4 ">
+        <div>
+          <img [src]="item.img[0]" class="h-30 w-30" />
+        </div>
+        <div class="w-1/2 ml-5 ">
+          <p class="font-bold">{{ item.title }}</p>
+          <p>{{ item.description }}</p>
+          <span class="line-through">${{ item.oldPrice }}</span>
+          <span class="text-blue-500 ml-2.5">${{ item.newPrice }}</span>
+        </div>
+        <div class="flex gap-3">
+          <button
+            (click)="decrement()"
+            class="bg-white border-solid border-2 border-black rounded-xl w-9 h-7 font-bold"
+          >
+            -
+          </button>
+          <p class="mt-1.5">{{ item.count }}</p>
+          <button
+            (click)="increment()"
+            class="bg-white border-solid border-2 border-black rounded-xl h-7 w-9 font-bold"
+          >
+            +
+          </button>
+          <div>
+            <h3>${{(item.newPrice)*(item.count)}}</h3>
+            <span class="fa-solid fa-trash-can text-red-500"></span>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+    <div class=" border-black border-solid border-2 h-auto w-2/5 rounded-xl p-5">
+      <p class="font-bold text-2xl my-4">Order Summary</p>
+      <div class="flex">
+        <p class="">Subtotal</p>
+        <p *ngFor=""></p>
+      </div>
+      <hr />
+      <div>
+        <input type="text" placeholder="Discount code" />
+        <button class="bg-black text-white">Apply</button>
+      </div>
+      <p>Shipping</p>
+      <p>Tax</p>
+      <hr />
+      <p>Total</p>
+      <button class="bg-blue-600 text-white p-3.5 rounded-xl w-auto">Proceed to Checkout</button>
+      <br />
+      <a routerLink="/productsList" class="text-blue-500 hover:text-blue-900 cursor-pointer"
+        >Continue Shopping</a
+      >
+    </div>
+  </div>
+</section>

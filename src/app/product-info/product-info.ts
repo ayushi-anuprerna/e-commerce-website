@@ -20,7 +20,6 @@ export class ProductInfo {
   }
   changeImg(changed: string) {
     this.mainImg = changed;
-    console.log('changed');
   }
   increment() {
     this.count.set(this.count()+1)

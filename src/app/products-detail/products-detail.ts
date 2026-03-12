@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Input,Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from '../service/cart-service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { Router } from '@angular/router';
   styleUrl: './products-detail.css',
 })
 export class ProductsDetail {
-constructor(private router : Router){} //we have declared a variable router whose type is Router
+constructor(private router : Router, private cartService: CartService){} //we have declared a variable router whose type is Router
 imgClicked(){
   this.router.navigate(['/product-info',this.products.title],{state : {product:this.products}})
   
@@ -27,8 +28,8 @@ imgClicked(){
 
 addToCart(){
   //THIS FUNCTION WILL EMIT THE DATA FROM CHILD TO PARENT THROUGH EVENT EMITTER CLASS
- 
-  this.addCartEvent.emit(this.products)
+  this.cartService.addToCart(this.products,1);
+  this.addCartEvent.emit(this.products);
 }
 }
 
