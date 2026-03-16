@@ -239,16 +239,16 @@ export class ProductsList {
       newPrice: 50.99,
     },
   ];
-  handleCartEvent(prod: any) {
-    this.title = prod.title;
-    this.newPrice = prod.newPrice;
-    this.isShowPopUp = true;
-  //   setTimeout(()=>{
-  //     this.isShowPopUp=false
+//  handleCartEvent(prod: any) {
+//     this.title = prod.title;
+//     this.newPrice = prod.newPrice;
+//     this.isShowPopUp = true;
+//    setTimeout(()=>{
+//        this.isShowPopUp=false 
   //   },2000
   // )
   }
-  isShowPopUp: boolean = false;
-  title: string = '';
-  newPrice: number = 0;
-}
+  // isShowPopUp: boolean = false;
+  // title: string = '';
+  // newPrice: number = 0;
+

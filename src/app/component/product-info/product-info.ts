@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { Signal } from '@angular/core';
+import { CartService } from '../../service/cart-service';
+
 
 
 @Component({
@@ -11,14 +13,17 @@ import { Signal } from '@angular/core';
 })
 export class ProductInfo {
   // constructor(private signal : Signal){}
+  constructor(private service : CartService){}
+
+  
   count = signal(1);
   mainImg: string = '';
   product: any;
   ngOnInit() {
-    this.product = history.state.product;
+    this.product = history.state.product;//history is a container in which we keep transfered data product in state object
     this.mainImg = this.product.img[0];
   }
-  changeImg(changed: string) {
+  changeImg(changed: string) { //to display subimage as main image
     this.mainImg = changed;
   }
   increment() {
@@ -31,4 +36,9 @@ export class ProductInfo {
       
     
   }
+  addItemToCart(){
+    this.service.addToCart(this.product , this.count())
+    this.service.notification(this.product)
+  }
+
 }

@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastMessage } from '../component/toast-message/toast-message';
 
 interface CartItem{
   title:string;
@@ -12,6 +14,9 @@ interface CartItem{
   providedIn: 'root',
 })
 export class CartService {
+  constructor (private toast: MatSnackBar){
+
+  }
   cartItems:CartItem[]=[];
 
   addToCart(item: CartItem,count:number){
@@ -21,11 +26,24 @@ export class CartService {
     }
     else{
       item.count=count
-      this.cartItems.push(item);//add new item to cart
+      this.cartItems.push(item);//push new item to cart bcz cart item is an array
     }
   }
-  getCartItems(): CartItem[]{
+  getCartItems(): CartItem[]{ //it will return cartitem array to cart component
     return this.cartItems
   }
+  notification(data : CartItem){
+    
+    this.toast.openFromComponent(ToastMessage,{ //which component should be displayed and what data should be passed
+      data:data,
+      duration:3000,
+      horizontalPosition:'right',
+      verticalPosition:'top',
+      panelClass: ['notifyInfo'] //by default css using class(panelclass)
+
+
+    });
+  }
+  
 
 }

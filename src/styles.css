@@ -1,1 +1,5 @@
 @import "tailwindcss";
+.notifyInfo .mdc-snackbar__surface{
+background: transparent !important; /*we need to remove default black bg*/
+box-shadow: none;
+}
